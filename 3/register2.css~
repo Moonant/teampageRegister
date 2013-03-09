@@ -1,0 +1,65 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, table, th, td, img, a {
+  margin: 0;
+  padding: 0;
+  font-size:100%;
+  font-weight:normal;
+}
+#_body{
+  margin-right:auto;
+  margin-left:auto;
+  width:800px;
+  font-family:Arial, sans-serif;
+}
+div#bg{
+  width:1024px;
+  height:768px;
+  margin:0 auto;
+  background:url("./333.jpg");
+  background-repeat:no-repeat;
+}
+div#content {
+  width:850px;
+  margin:0 auto;
+}
+div#content h1{
+   padding: 45px 0 0 174px;
+   font-size:33px;
+}
+div#nav ul{
+  list-style:none;
+  display:inline-block;
+  margin:21 161;
+}
+#nav ul li{
+  float:left;
+  width:48px;
+  height:47px;
+  text-indent:-999;
+}
+#nav ul span{
+  float:left;
+  margin:21 12;
+  width:48px;
+  height:4px;
+  background:url("./line.png")
+}
+li.p1{
+  background:url("./pot1.png");
+}
+li.p2{
+  background:url("./pot2.png");
+}
+li.p3{
+  background:url("./pot3.png");
+}
+li.p4{
+  background:url("./pot4.png");
+}
+li.p5{
+  background:url("./pot5.png");
+}
+div#guide img{
+  position:relative;
+  left:77px;
+  top:-16px;
+}
