@@ -11,6 +11,13 @@ $(function(){
 	value:50,
 	slide:function(event,ui){
 	  $(this).next().text(ui.value+"%");
+	  if(ui.value==0){
+	  $(this).addClass("val0");
+	  $(this).find('a').addClass('val0');
+	  }else{
+	  $(this).removeClass("val0");
+	  $(this).find('a').removeClass('val0');
+	  }
 	  context.clearRect(0,0,canvas.width,canvas.height);
 	  drawCircle(56,56,ui.value/2,'#d2e6f4');
 	  drawCircle(56,56,ui.value/2,'#d5deec');

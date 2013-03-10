@@ -90,6 +90,7 @@ a#upLoadPhoto{
   height:31px;
 }
 a#upLoadPhoto:hover{
+  overflow:hidden;
   background:url("./uploadphoto2.png");
 }
 a#nextP{

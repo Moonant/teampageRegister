@@ -160,14 +160,35 @@ span.slideTip{
 
 div#slide div{
   display:inline-block;
-  height:4px;
+  height:6px;
+  border:none;
   width:230px;
   bottom:-1px;
   margin-right:16px;
+  background:url("./slideL1.png");
+}
+div#slide div.val0{
+  background:url("./slideL2.png");
 }
 div#slide div a{
-  height:8px;
-  width:8px;
+  height:12px;
+  width:13px;
+  background:url("./slideA1.png");
+  cursor:pointer;
+  border:medium none;
+  border-radius:0;
+  top:-11px;
+}
+div#slide div a.val0{
+  background:url("./slideA2.png");
+  
+}
+div#slide div a:hover{
+  background:url("./slideA3.png");
+  width:21px;
+  height:19px;
+  top:-15px;
+
 }
 div#slide span.slideVal{
   font-size:14px;
