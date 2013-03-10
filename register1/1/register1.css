@@ -133,7 +133,11 @@ span.tip1 , span.tip2 {
   background:url("./tip.png");
   margin-left: 11px;
   vertical-align:15px;
+  margin-top:-23px;
 
   
+}
+div.input{
+  padding-top:23px; 
 }
 
