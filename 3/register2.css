@@ -14,7 +14,7 @@ div#bg{
   width:1024px;
   height:768px;
   margin:0 auto;
-/*  background:url("./333.png");*/
+  background:url("./333.png");
   background-repeat:no-repeat;
 }
 div#content {
@@ -120,22 +120,22 @@ li#android{
 li#diy{
   background:url("./web1.png");
 }
-li#design:hover{
+li#design:hover,li#design.tempTip{
   background:url("./Design2.png");
 }
-li#alg:hover{
+li#alg:hover,li#alg.tempTip{
   background:url("./ALG2.png");
 }
-li#it:hover{
+li#it:hover,li#it.tempTip{
   background:url("./IT2.png");
 }
-li#web:hover{
+li#web:hover,li#web.tempTip{
   background:url("./web2.png");
 }
-li#android:hover{
+li#android:hover,li#android.tempTip{
   background:url("./android2.png");
 }
-li#diy:hover{
+li#diy:hover,li#diy.tempTip{
   background:url("./web2.png");
 }
 
@@ -155,7 +155,7 @@ span.slideTip{
   margin:20 17 -8 27;
   width:80px;
   height:32px;
-  background:url("./ALG3.png");
+  background:url("./design4.png");
 }
 
 div#slide div{
@@ -192,4 +192,7 @@ a#nextP:hover,a#beforeP{
 a#beforeP{
   float:left;
   margin-left:73px;
+}
+a:focus{
+  outline:none;
 }
