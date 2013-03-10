@@ -31,17 +31,17 @@ div#nav {
 div#nav ul{
   list-style:none;
   display:inline-block;
-  margin:21 161;
+  margin:21px 161px;
 }
 #nav ul li{
   float:left;
   width:48px;
   height:47px;
-  text-indent:-999;
+  text-indent:-999px;
 }
 #nav ul span{
   float:left;
-  margin:21 12;
+  margin:21px 12px;
   width:48px;
   height:4px;
   background:url("./line.png")
@@ -69,7 +69,7 @@ div#guide img{
 
 div#yourskill{
   float:left;
-  margin:0 23 0 122;
+  margin:0 23px 0 122px;
 }
 div#yourskill p{
   display:block;
@@ -152,7 +152,7 @@ span.slideTip{
   padding-top:12px;
   font-size:13px;
   text-align:center;
-  margin:20 17 -8 27;
+  margin:20px 17px -8px 27px;
   width:80px;
   height:32px;
   background:url("./design4.png");
@@ -175,7 +175,7 @@ div#slide span.slideVal{
 }
 div#circle{
   clear:both;
-  padding:32 0 80 97;
+  padding:32px 0 80px 97px;
 }
 
 a#nextP , a#beforeP{
