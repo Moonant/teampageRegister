@@ -118,7 +118,7 @@ li#android{
   background:url("./android1.png");
 }
 li#diy{
-  background:url("./web1.png");
+  background:url("./diy1.png");
 }
 li#design:hover,li#design.tempTip{
   background:url("./Design2.png");
@@ -136,7 +136,7 @@ li#android:hover,li#android.tempTip{
   background:url("./android2.png");
 }
 li#diy:hover,li#diy.tempTip{
-  background:url("./web2.png");
+  background:url("./diy2.png");
 }
 
 div#slide{
@@ -158,32 +158,33 @@ span.slideTip{
   background:url("./design4.png");
 }
 
-div#slide div{
+div#slide div#slide1{
   display:inline-block;
   height:6px;
   border:none;
   width:230px;
   bottom:-1px;
   margin-right:16px;
-  background:url("./slideL1.png");
+  background:url("./slideL2.png");
 }
 div#slide div.val0{
   background:url("./slideL2.png");
 }
-div#slide div a{
+div#slide div#slide1 a{
   height:12px;
   width:13px;
-  background:url("./slideA1.png");
+  margin-left:-5px;
+  background:url("./slideA2.png");
   cursor:pointer;
   border:medium none;
   border-radius:0;
   top:-11px;
 }
-div#slide div a.val0{
+div#slide div#slide1 a.val0{
   background:url("./slideA2.png");
   
 }
-div#slide div a:hover{
+div#slide div#slide1 a:hover{
   background:url("./slideA3.png");
   width:21px;
   height:19px;
@@ -216,4 +217,11 @@ a#beforeP{
 }
 a:focus{
   outline:none;
+}
+
+span.slideTip input{
+	border:none;
+	background:transparent;
+	width:68px;
+	
 }

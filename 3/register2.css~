@@ -14,7 +14,7 @@ div#bg{
   width:1024px;
   height:768px;
   margin:0 auto;
-  background:url("./333.jpg");
+  background:url("./333.png");
   background-repeat:no-repeat;
 }
 div#content {
@@ -25,41 +25,202 @@ div#content h1{
    padding: 45px 0 0 174px;
    font-size:33px;
 }
+div#nav {
+  margin-bottom:34px;
+}
 div#nav ul{
   list-style:none;
   display:inline-block;
-  margin:21 161;
+  margin:21px 161px;
 }
 #nav ul li{
   float:left;
   width:48px;
   height:47px;
-  text-indent:-999;
+  text-indent:-999px;
 }
 #nav ul span{
   float:left;
-  margin:21 12;
+  margin:21px 12px;
   width:48px;
   height:4px;
   background:url("./line.png")
 }
 li.p1{
-  background:url("./pot1.png");
+  background:url("./1.png");
 }
 li.p2{
-  background:url("./pot2.png");
+  background:url("./2.png");
 }
 li.p3{
-  background:url("./pot3.png");
+  background:url("./3.png");
 }
 li.p4{
-  background:url("./pot4.png");
+  background:url("./4.png");
 }
 li.p5{
-  background:url("./pot5.png");
+  background:url("./5.png");
 }
 div#guide img{
   position:relative;
   left:77px;
   top:-16px;
+}
+
+div#yourskill{
+  float:left;
+  margin:0 23px 0 122px;
+}
+div#yourskill p{
+  display:block;
+  width:86px;
+  height:209px;
+  margin-top:21px;
+  background:url('tip.png');
+}
+div#myform {
+  float:left;
+  width:486px;
+  height:266px;
+}
+div#teamNav{
+  float:left;
+}
+div#teamNav ul{
+  list-style:none;
+  margin-top:15px;
+}
+div#teamNav ul li{
+  display:block;
+  width:38px;
+  height:56px;
+  margin:-14px 0;
+}
+div#teamNav ul li a{
+  display:block;
+  height:57px;
+  width:26px;
+}
+  
+li#design{
+  background:url("./Design1.png");
+}
+li#alg{
+  background:url("./ALG1.png");
+}
+li#it{
+  background:url("./IT1.png");
+}
+li#web{
+  background:url("./web1.png");
+}
+li#android{
+  background:url("./android1.png");
+}
+li#diy{
+  background:url("./diy1.png");
+}
+li#design:hover,li#design.tempTip{
+  background:url("./Design2.png");
+}
+li#alg:hover,li#alg.tempTip{
+  background:url("./ALG2.png");
+}
+li#it:hover,li#it.tempTip{
+  background:url("./IT2.png");
+}
+li#web:hover,li#web.tempTip{
+  background:url("./web2.png");
+}
+li#android:hover,li#android.tempTip{
+  background:url("./android2.png");
+}
+li#diy:hover,li#diy.tempTip{
+  background:url("./diy2.png");
+}
+
+div#slide{
+  float:left;
+  height:265px;
+  margin-left:-12px;
+  width:460px;
+  overflow-y:scroll;
+  background:#F9F9F9;
+}
+span.slideTip{
+  display:inline-block;
+  padding-top:12px;
+  font-size:13px;
+  text-align:center;
+  margin:20px 17px -8px 27px;
+  width:80px;
+  height:32px;
+  background:url("./design4.png");
+}
+
+div#slide div#slide1{
+  display:inline-block;
+  height:6px;
+  border:none;
+  width:230px;
+  bottom:-1px;
+  margin-right:16px;
+  background:url("./slideL2.png");
+}
+div#slide div.val0{
+  background:url("./slideL2.png");
+}
+div#slide div#slide1 a{
+  height:12px;
+  width:13px;
+  margin-left:-5px;
+  background:url("./slideA2.png");
+  cursor:pointer;
+  border:medium none;
+  border-radius:0;
+  top:-11px;
+}
+div#slide div#slide1 a.val0{
+  background:url("./slideA2.png");
+  
+}
+div#slide div#slide1 a:hover{
+  background:url("./slideA3.png");
+  width:21px;
+  height:19px;
+  top:-15px;
+
+}
+div#slide span.slideVal{
+  font-size:14px;
+  vertical-align:-3px;
+}
+div#circle{
+  clear:both;
+  padding:32px 0 80px 97px;
+}
+
+a#nextP , a#beforeP{
+    display:inline-block;
+    background:url("./nextP1.png");
+    width:112px;
+    height:38px;
+    float:right;
+    margin: -12px 75px 0 0;
+}
+a#nextP:hover,a#beforeP{
+    background:url("./nextP2.png");
+}
+a#beforeP{
+  float:left;
+  margin-left:73px;
+}
+a:focus{
+  outline:none;
+}
+
+span.slideTip input{
+	border:none;
+	background:transparent;
+	width:68px;
 }
