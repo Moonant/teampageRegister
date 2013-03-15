@@ -157,6 +157,10 @@ span.slideTip{
   height:32px;
   background:url("./design4.png");
 }
+span.slideTip.val0{
+  background:url("./design3.png");
+  
+}
 
 div#slide div#slide1{
   display:inline-block;
@@ -167,8 +171,8 @@ div#slide div#slide1{
   margin-right:16px;
   background:url("./slideL2.png");
 }
-div#slide div.val0{
-  background:url("./slideL2.png");
+div#slide div#slide1.val0{
+  background:url("./slideL1.png");
 }
 div#slide div#slide1 a{
   height:12px;
@@ -181,7 +185,7 @@ div#slide div#slide1 a{
   top:-11px;
 }
 div#slide div#slide1 a.val0{
-  background:url("./slideA2.png");
+  background:url("./slideA1.png");
   
 }
 div#slide div#slide1 a:hover{
@@ -224,4 +228,13 @@ span.slideTip input{
 	background:transparent;
 	width:68px;
 	
+}
+
+a#befP{
+  float:left;
+  background:url("./previous.png");
+}
+a#nextP{
+  float:right;
+  background:url("./next.png");
 }
