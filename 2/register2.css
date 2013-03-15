@@ -15,7 +15,7 @@ a:focus{
 }
 
 div#bg{
- /* background:url("./2.png");*/
+  background:url("./2.png");
   width:1024px;
   height:768px;
   margin: 0 auto;
@@ -190,4 +190,14 @@ a#befP{
 a#nextP{
   float:right;
   background:url("./next.png");
+}
+span.tip1,span.tip2{
+  width:144px;
+  height:30px;
+  display:inline-block;
+  background:url("./tip.png");
+  position:absolute;
+  padding:11px;
+  margin-left:47px;
+  display:none;
 }
