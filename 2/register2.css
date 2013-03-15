@@ -1,0 +1,193 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, table, th, td, img, a {
+  margin: 0;
+  padding: 0;
+  font-size:100%;
+  font-weight:normal;
+}
+#_body{
+  margin-right:auto;
+  margin-left:auto;
+  width:800px;
+  font-family:Arial, sans-serif;
+}
+a:focus{
+  outline:none;
+}
+
+div#bg{
+ /* background:url("./2.png");*/
+  width:1024px;
+  height:768px;
+  margin: 0 auto;
+}
+div#pot img{
+  margin:106px 0 5 248px;
+}
+div#guide img{
+  margin:0 0 24px 282px;
+}
+div#myform{
+  width:600px;
+  margin:0 auto;
+}
+div#myform  > div{
+  margin:25px 0;
+}
+div#myform label{
+  display:inline-block;
+  margin-right:20px;
+}
+
+div#sexInput input{
+  display:none;
+}
+div#sexInput span{
+  background:url("./button1.png");
+  background-repeat:no-repeat;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 18px;
+  margin: 5px 8px;
+  padding-left: 20px;;
+}
+div#sexInput span.checked{
+  background:url("./button4.png");
+  background-repeat:no-repeat;
+}
+/*div#sexInput span#w{
+  background:url("");
+}
+div#sexInput span#w.checked{
+  background:url("");
+}*/
+
+div#myform a{
+  display:inline-block;
+  width:59px;
+  height:59px;
+  margin:0 7px;
+}
+/*div#myform a#design{
+  background-position:0 0;
+}
+div#myform a#design:hover{
+  background-position:-3px,0px;
+}
+div#myform a{
+  background-position:-9px,-8px;
+}*/
+div#myform a:hover{
+  background-position:-7px,-9px;
+}
+div#myform a.select:hover{
+  background-position:0,0px;
+}
+div#myform a,a.select{
+  background-repeat:no-repeat;
+}
+
+a#design{
+  background:url("./design1.png");
+}
+a#design:hover{
+  background:url("./design2.png");
+}
+a#design.select{
+  background:url("./design3.png");
+  background-repeat:no-repeat;
+}
+a#alg{
+  background:url("./alg1.png");
+}
+a#alg:hover{
+  background:url("./alg2.png");
+}
+a#alg.select{
+  background:url("./alg3.png");
+  background-repeat:no-repeat;
+}
+a#it{
+  background:url("./it1.png");
+}
+a#it:hover{
+  background:url("./it2.png");
+}
+a#it.select{
+  background:url("./it3.png");
+  background-repeat:no-repeat;
+}
+a#web{
+  background:url("./web1.png");
+}
+a#web:hover{
+  background:url("./web2.png");
+}
+a#web.select{
+  background:url("./web3.png");
+  background-repeat:no-repeat;
+}
+a#android{
+  background:url("./android1.png");
+}
+a#android:hover{
+  background:url("./android2.png");
+}
+a#android.select{
+  background:url("./android3.png");
+  background-repeat:no-repeat;
+}
+
+a#zy{
+  background:url("./zy1.png");
+}
+a#zz{
+  background:url("./zz1.png");
+}
+a#dz{
+  background:url("./dz1.png");
+}
+a#zy:hover{
+  background:url("./zy2.png");
+}
+a#zz:hover{
+  background:url("./zz2.png");
+}
+a#dz:hover{
+  background:url("./dz2.png");
+}
+a#zy.select{
+  background:url("./zy3.png");
+}
+a#zz.select{
+  background:url("./zz3.png");
+}
+a#dz.select{
+  background:url("./dz3.png");
+}
+div#work a:hover{
+  background-position:0 0;
+  background-repeat:no-repeat;
+}
+div#work a.select{
+  background-repeat:no-repeat;
+}
+div#team label ,div#work label{
+  position:relative;
+  bottom:21px;
+}
+div#changePage{
+  margin:92px auto 0;
+  width:699px;
+}
+div#changePage a{
+  width:112px;
+  height:38px;
+}
+a#befP{
+  float:left;
+  background:url("./previous.png");
+}
+a#nextP{
+  float:right;
+  background:url("./next.png");
+}
