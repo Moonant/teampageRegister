@@ -174,6 +174,18 @@ div#slide div#slide1{
 div#slide div#slide1.val0{
   background:url("./slideL1.png");
 }
+
+div#slide span.remove{
+     background: url("./controls.png") repeat scroll -167px 0 transparent;
+    display: inline-block;
+    height: 23px;
+    left: 14px;
+    position: relative;
+    vertical-align: middle;
+    width: 23px;
+	display:none;
+	cursor:pointer;
+}
 div#slide div#slide1 a{
   height:12px;
   width:13px;

@@ -1,60 +1,60 @@
 var canvas ;
 var context ;
-
-
-
 $(function(){
   //.........................对象.........
   function AllSkills(){
-	this.test=0;
+
   }
   var allSkills = new AllSkills;
+
   function DefSkill(){
 	this.ps="photoshop";
 	this.html="html";
 	this.java="java";
-	this.c="c 语言";
   }
   var defSkill=new DefSkill();
+  function Skill(id,name){
+	this.id=id;
+	this.name=name;
+	
+  }
   //.............................初始................
   for(var p in defSkill){
-	allSkills[p]=0;
+	addSkill(p,p.value);
   }
-  function DiyArr(){}
-  var diyArr = new DiyArr;
-  var sameArr = new DiyArr;
-  var diyNum = 0; 
-
-
-/*for(var p in data){
-	diyNum++;
-	diyArr[diyNum]=p;
-	allSkills[diyNum]=data[p];
-}*/
+  var diyArr = new Array();
+  var sameArr = new Array();
+  var diyNum = -1; 
+  var sameNum = -1;
   
   changeTip("design");
   $("div#teamNav ul li#design").attr('class','tempTip');
   //.................................函数..................
-  var nowsame;
+  function addSkill(id,name){
+	allSkills.newPropertyName=id;
+	allSkills[id]=0;
+  }
+
   function newDiySkill(name){
-	for(var p in sameArr){
-	  if(sameArr[p]==name)
+	for(var i=0;i<=sameNum;i++){
+	  if(sameArr[i][1]==name)
 		return 0;
 	}
 	for(var p in defSkill){
 	  if(defSkill[p]==name){
-		sameArr[p]=name;
-		nowsame=p;
+		sameNum++;
+		sameArr[sameNum]=new Array(p,name);
 		return 1;
 	  }
 	}
-	for(var p in diyArr){
-	  if(diyArr[p]==name){
+	for(var i=0;i<=diyNum;i++){
+	  if(diyArr[i]==name){
 		return 0;
 	  }
 	}
 	diyNum++;
-	diyArr[diyNum]=name;
+	diyArr.push(name);
+	allSkills.newPropertyName=diyNum;
 	allSkills[diyNum]=0;
 	return 3;
   }
@@ -100,11 +100,11 @@ $(function(){
 
 	  function diy(){
 	  $("div#slide").html('');
-	  for(var p in diyArr){
-		creatSlider(p,diyArr[p]);
+	  for(var i=0,len=diyArr.length; i<len; i++){
+		creatSlider(i,diyArr[i]);
 	  }	
-	  for(var p in sameArr){
-		creatSlider(p,sameArr[p]);
+	  for(var i=0,len=sameArr.length; i<len; i++){
+		creatSlider(sameArr[i][0],sameArr[i][1]);
 	  }
 	  var mydata="<div id='addDiv'><a id='addskill' href='javascript:void(0);'><span class=\"slideTip\">"+"点击添加"+"</span></a><div id=\"slide1\"></div><span class=\"slideVal\">0%</span></div>";
 	  $("div#slide").append(mydata);
@@ -118,11 +118,13 @@ $(function(){
 		if(keycode==13){
 		  newskill=$(this).val();
 		  var res=newDiySkill(newskill)
-//		  if(res==3)
-//			creatSlider(diyNum,diyArr[diyNum]);
-//		  else if(res==1){
-//			creatSlider(nowsame,sameArr[nowsame]);
-//		  }
+		  if(res==3)
+			creatSlider(diyNum,diyArr[diyNum]);
+		  else if(res==1){
+			creatSlider(sameArr[sameNum][0],sameArr[sameNum][1]);
+			
+		  }
+	//$("div#addDiv").replaceWith(mydata);
 		  diy();
 		}
 	});
@@ -132,8 +134,7 @@ $(function(){
     if(id=="design"){
 	  $("div#slide").attr("class","")
 	  $("div#slide").html('');
-	  creatSlider("ps","photoshop");
-	  creatSlider("c","c 语言");		
+	  creatSlider("ps","photoshop");		
 	}else if(id=="web"){
 	  $("div#slide").attr("class","")
 	  $("div#slide").html('');
@@ -141,15 +142,6 @@ $(function(){
 	}else if(id=="diy"){
 	  $("div#slide").attr("class","diyForm")
 	  diy();  
-	}else if(id="andriod"){
-	  $("div#slide").html('');
-	  creatSlider("java","java");	
-	}else if(id="alg"){
-	  $("div#slide").html('');
-	  creatSlider("java","java");	
-	}else if(id="it"){
-	  $("div#slide").html('');
-	  creatSlider("java","java");	
 	}
   }
 //........................监视...............................
@@ -166,16 +158,12 @@ $(function(){
   });
   $("span.remove").live("click",function(){
 	var id=$(this).parent().attr("id");
-	for(var p in diyArr){
-	 if(id==p){
-	  delete diyArr[p]; 
-	  diy();
-	  return;
+	for(var i=0,len=diyArr.length; i<len; i++){
+	 if(id==i){
+	  
 	 } 
 	}
-	delete sameArr[id];
-	diy();
-	return;
+
   })
 
   $("div#teamNav ul li").click(function(){
@@ -189,29 +177,22 @@ $(function(){
 
   
   $("#nextP").click(function(){
-	var result1="";
-	for(var p in defSkill){
+	var result1;
+	for(var p in allSkills){
+	if(p!=0)
 	  result1+=(p+"="+allSkills[p]+"&");
+	else 
+	  break;
 	}
-	result1+="diy=0";
-	alert(result1)
-
-
-	var result2 = "";
-	var count=0;
-	for(var i in diyArr){
-	  count++;
-	  result2+=(diyArr[i]+"="+allSkills[i]+"&");
+	var result2 = "len="+diyArr.length;
+	for(var i=0,len=diyArr.length; i<len; i++){
+	  result2+=("&"+i+"="+diyArr[i]+"&"+i+"_val="+allSkills[i]);
 	}
-	result2+="diy=1";
 	alert(result1+result2);
   })
 })
 
-function mask(){
-  $("div#mask").show();
-  
-}
+
 
 
 
@@ -237,5 +218,3 @@ function drawCircle(centerX,centerY,redius,style){
   context.fillStyle=style;
   context.fill();
 }
-
-
