@@ -1,40 +1,87 @@
-var canvas ;
-var context ;
-
-
-
 $(function(){
   //.........................对象.........
-  function AllSkills(){
-	this.test=0;
+  var Web={
+	"php":0,
+    "javascript":0,
+	"python":0
   }
-  var allSkills = new AllSkills;
-  function DefSkill(){
-	this.ps="photoshop";
-	this.html="html";
-	this.java="java";
-	this.c="c 语言";
+  var Design={
+	"photoshop":0,
+    "illustrator":0,
+    "flash":0,
+    "3ds max":0,
+    "axure":0
   }
-  var defSkill=new DefSkill();
-  //.............................初始................
-  for(var p in defSkill){
-	allSkills[p]=0;
+  var It={
+	"c":0,
+    "python":0,
+    "服务器配置":0
   }
-  function DiyArr(){}
-  var diyArr = new DiyArr;
-  var sameArr = new DiyArr;
-  var diyNum = 0; 
-
-
-/*for(var p in data){
-	diyNum++;
-	diyArr[diyNum]=p;
-	allSkills[diyNum]=data[p];
-}*/
+  var Alg={
+    "c":0,
+    "java":0,
+	"cplusplus":0
+  }
+  var Andriod={
+	"andriod":0,
+    "java":0,
+    "c#":0
+  }
   
-  changeTip("design");
-  $("div#teamNav ul li#design").attr('class','tempTip');
+  function Myobj(){
+  }
+  var allSkills = new Myobj();
+  var defSkill=new Myobj();
+  var diyArr = new Myobj();
+  var sameArr = new Myobj();
+  var diyNum = 0; 
+  var circleNum=1;
+  
+    defInit(Web);
+    defInit(Design);
+    defInit(It);
+    defInit(Alg);
+    defInit(Andriod);
+//...................................初始...................
+
+  init('design');
+
+
+ 
   //.................................函数..................
+  function backinit(name,val){
+	for(var p in defSkill){
+	  if(defSkill[p]==name){
+		allSkills[p]=val;
+	  }
+	  else
+		diyNum++;
+		diyArr[diyNum]=name;
+		allSkills[diyNum]=val;
+	}
+  }
+
+  function init(team){
+
+    changeTip(team);
+    $("div#teamNav ul li#"+team+"").attr('class','tempTip');
+  }
+  function isExist(p){
+	for (var p2 in defSkill){
+	  if(defSkill[p2]==p)
+		return true;
+	}
+	return 0;
+  }
+  function defInit(team){
+	for(var p in team){
+	  if(isExist(p))
+		continue;
+	  diyNum++;
+	  defSkill[diyNum]=p;
+	  allSkills[diyNum]=team[p];
+	}  
+  }
   var nowsame;
   function newDiySkill(name){
 	for(var p in sameArr){
@@ -58,12 +105,68 @@ $(function(){
 	allSkills[diyNum]=0;
 	return 3;
   }
+  function draw(){
+	var circleNum=0;
+    context.clearRect(0,0,canvas.width,canvas.height);
+	for(var p in defSkill){
+	  if(allSkills[p]>0){
+		circleNum++;
+		var i=parseInt(circleNum%8)+1;
+		var j=parseInt(circleNum/8)+1;
+		var cName=defSkill[p];
+		var val=allSkills[p];
+		 var x=i*80;
+		 var y=j*80;
+		 drawCircle(x,y,val,cName);
+	  }
+	}
+	for(var p in diyArr){
+	  if(allSkills[p]>0){
+		circleNum++;
+		var i=parseInt(circleNum%8)+1;
+		var j=parseInt(circleNum/8)+1;
+		var cName=diyArr[p];
+		var val=allSkills[p];
+		 var x=i*80;
+		 var y=j*80;
+		 drawCircle(x,y,val,cName);
+	  }
+	}
+	/*var team=$("div#slide").get(0);
+	nodes=team.childNodes;
+	for(var node in nodes){
+       var id=nodes[node].id;
+	   var val=allSkills[id];
+	   var cName;
+	   if(defSkill[id]) cName=defSkill[id];
+	   else cName=diyArr[id];
+	   if( val>0){
+	   circleNum++;
+		 var x=circleNum*80;
+		 var y=40;
+		 drawCircle(x,y,val,cName);
+	   }
+	}*/
+	
+  }
 
-  function creatSlider(slideId,slideName){
+  function creatSlider(slideName){
+	var slideId=1;
+	for(var p in defSkill){
+	  if(slideName==defSkill[p]) 
+		 slideId=p;
+	  else{
+		for(var p in diyArr){
+		  if(slideName==diyArr[p]){
+			slideId=p;
+		  }
+		}
+	  }
+	}
 	var mydata="<div id='"+slideId+"'><span class=\"slideTip\">"+slideName+"</span><div  id=\"slide1\"></div><span class=\"slideVal\">"+allSkills[slideId]+"%</span><span class='remove'></span></div>";
 	$("div#slide").prepend(mydata);
-
-  $("div#slide div#"+slideId+" div#slide1").slider({
+	if(context) draw();
+    $("div#slide div#"+slideId+" div#slide1").slider({
 	min:0,
 	max:100,
 	value:allSkills[slideId],
@@ -79,10 +182,7 @@ $(function(){
 		$(this).removeClass("val0");
 		$(this).find('a').removeClass('val0');
 	  }
-	  context.clearRect(0,0,canvas.width,canvas.height);
-	  drawCircle(56,56,ui.value/2,'#d2e6f4');
-	  drawCircle(56,56,ui.value/2,'#d5deec');
-
+	  draw();
 	}
   });
 	var thisS =  $("div#slide div#"+slideId+" div#slide1");
@@ -97,59 +197,74 @@ $(function(){
 	  }
 
   }
-
-	  function diy(){
+  function diy(){
 	  $("div#slide").html('');
 	  for(var p in diyArr){
-		creatSlider(p,diyArr[p]);
+		creatSlider(diyArr[p]);
 	  }	
 	  for(var p in sameArr){
-		creatSlider(p,sameArr[p]);
+		creatSlider(sameArr[p]);
 	  }
-	  var mydata="<div id='addDiv'><a id='addskill' href='javascript:void(0);'><span class=\"slideTip\">"+"点击添加"+"</span></a><div id=\"slide1\"></div><span class=\"slideVal\">0%</span></div>";
+	  var mydata="<div id='addDiv'><a id='addskill' href='javascript:void(0);'><span class=\"slideTip\">"+"双击添加"+"</span></a><div id=\"slide1\"></div><span class=\"slideVal\">0%</span></div>";
 	  $("div#slide").append(mydata);
 	
 	
   $("a#addskill").click(function(){
     var mydata2="<div><span class=\"slideTip\"><input type='text' maxlength='8'></input></span><div id=\"slide1\"></div><span class=\"slideVal\">0%</span></div>"
     $(this).parent().html(mydata2);
+    $("span.slideTip input").blur(function(){
+	  newskill=$(this).val();
+	  if(newskill!=""){
+		var res=newDiySkill(newskill)
+		diy();
+	  }
+	})
     $("span.slideTip input").keypress(function(event){
 		var keycode = (event.keyCode ? event.keyCode : event.which);
 		if(keycode==13){
 		  newskill=$(this).val();
-		  var res=newDiySkill(newskill)
-//		  if(res==3)
-//			creatSlider(diyNum,diyArr[diyNum]);
-//		  else if(res==1){
-//			creatSlider(nowsame,sameArr[nowsame]);
-//		  }
-		  diy();
+		  if(newskill!=""){
+			var res=newDiySkill(newskill)
+			diy();
+		  }
 		}
 	});
   })
   }
   function changeTip(id){
     if(id=="design"){
-	  $("div#slide").attr("class","")
+	  $("div#slide").attr("class","design")
 	  $("div#slide").html('');
-	  creatSlider("ps","photoshop");
-	  creatSlider("c","c 语言");		
+	  for(var p in Design){
+		creatSlider(p);
+	  }
 	}else if(id=="web"){
-	  $("div#slide").attr("class","")
+	  $("div#slide").attr("class","web")
 	  $("div#slide").html('');
-	  creatSlider("html","html");	
+	  for(var p in Web){
+		creatSlider(p);
+	  }
 	}else if(id=="diy"){
-	  $("div#slide").attr("class","diyForm")
+	  $("div#slide").attr("class","diy")
 	  diy();  
-	}else if(id="andriod"){
+	}else if(id=="android"){
+	  $("div#slide").attr("class","andriod")
 	  $("div#slide").html('');
-	  creatSlider("java","java");	
-	}else if(id="alg"){
+	  for(var p in Andriod){
+		creatSlider(p);
+	  }
+	}else if(id=="alg"){
+	  $("div#slide").attr("class","alg")
 	  $("div#slide").html('');
-	  creatSlider("java","java");	
-	}else if(id="it"){
+	  for(var p in Alg){
+		creatSlider(p);
+	  }
+	}else if(id=="it"){
+	  $("div#slide").attr("class","it")
 	  $("div#slide").html('');
-	  creatSlider("java","java");	
+	  for(var p in It){
+		creatSlider(p);
+	  }
 	}
   }
 //........................监视...............................
@@ -185,27 +300,23 @@ $(function(){
 	$("span.slideTip").css('background',"url('"+id+"4'")
 	changeTip(id);
   
- })
+  })
 
   
-  $("#nextP").click(function(){
-	var result1="";
-	for(var p in defSkill){
-	  result1+=(p+"="+allSkills[p]+"&");
-	}
-	result1+="diy=0";
-	alert(result1)
-
-
-	var result2 = "";
-	var count=0;
-	for(var i in diyArr){
-	  count++;
-	  result2+=(diyArr[i]+"="+allSkills[i]+"&");
-	}
-	result2+="diy=1";
-	alert(result1+result2);
-  })
+    $("#nextP").click(function(){
+        var result1="";
+        for(var p in defSkill)
+            if(parseInt(allSkills[p]) != 0)
+		result1+=( defSkill[p] + "=" + allSkills[p] + "&");alert(result1);
+        if(result1.length)
+            $.post("?", "/aj/register/re_threeSubmit/diy=0&"+result1, function(data){});
+        var result2 = "";
+        for(var i in diyArr)
+            if(diyArr[i] != 0)
+                result2 += (diyArr[i] + "=" + allSkills[i] + "&");alert(result1);
+        if(result2.length)
+            $.post("?", "/aj/register/re_threeSubmit/diy=1&"+result2, function(data){});
+    })
 })
 
 function mask(){
@@ -217,25 +328,47 @@ function mask(){
 
 
 
+//.................画圆.......................
 
-
-
-
+var canvas ;
+var context ;
+function Circle(x,y,val,name){
+  this.x=x;
+  this.y=y;
+  this.val=val;
+  this.name=name;
+}
 window.onload = function(){
   canvas = document.getElementById("myCanvas");
   context = canvas.getContext("2d");
-  drawCircle(50,50,13,'#d2e6f4');
-  drawCircle(50,50,10,'#d5deec');
 }
-function drawCircle(centerX,centerY,redius,style){
+
+function drawCircle(centerX,centerY,val,cName){
   var startingAngle = 0;
-  var endingAngle = 2*Math.PI;
+  var endingAngle = (val/100)*2*Math.PI; 
   var counterclockwise = false;
   context.beginPath();
-  context.arc(centerX,centerY,redius,startingAngle,endingAngle,counterclockwise);
+  context.arc(centerX,centerY,35,startingAngle,endingAngle,counterclockwise);
+  context.lineTo(centerX,centerY);
   context.closePath();
-  context.fillStyle=style;
+  context.fillStyle='#e1ecfc';
   context.fill();
+  context.strokeStyle="#a9bdd8";
+  context.stroke();
+
+  context.beginPath();
+  context.arc(centerX,centerY,30,startingAngle,2*Math.PI,counterclockwise);
+  context.closePath();
+  context.fillStyle='#d5deec';
+  context.fill();
+  context.strokeStyle="#a9bdd8";
+  context.stroke();
+
+  context.textBaseline = "middle";
+  context.textAlign = "center";
+  context.font="11px serif";
+  context.fillStyle="#313131";
+  context.fillText(cName,centerX,centerY);
 }
 
 
