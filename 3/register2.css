@@ -10,66 +10,19 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
   width:800px;
   font-family:Arial, sans-serif;
 }
-div#bg{
-  width:1024px;
-  height:768px;
-  margin:0 auto;
-  background:url("./333.png");
-  background-repeat:no-repeat;
+#_body{
+  width:100%;
+  text-align:center;
 }
 div#content {
-  width:850px;
+  width:800px;
+  text-align:left;
   margin:0 auto;
-}
-div#content h1{
-   padding: 45px 0 0 174px;
-   font-size:33px;
-}
-div#nav {
-  margin-bottom:34px;
-}
-div#nav ul{
-  list-style:none;
-  display:inline-block;
-  margin:21px 161px;
-}
-#nav ul li{
-  float:left;
-  width:48px;
-  height:47px;
-  text-indent:-999px;
-}
-#nav ul span{
-  float:left;
-  margin:21px 12px;
-  width:48px;
-  height:4px;
-  background:url("./line.png")
-}
-li.p1{
-  background:url("./1.png");
-}
-li.p2{
-  background:url("./2.png");
-}
-li.p3{
-  background:url("./3.png");
-}
-li.p4{
-  background:url("./4.png");
-}
-li.p5{
-  background:url("./5.png");
-}
-div#guide img{
-  position:relative;
-  left:77px;
-  top:-16px;
 }
 
 div#yourskill{
   float:left;
-  margin:0 23px 0 122px;
+  margin:30px 26px 0 65px;
 }
 div#yourskill p{
   display:block;
@@ -82,6 +35,7 @@ div#myform {
   float:left;
   width:486px;
   height:266px;
+  margin:45px 0 25px 0;
 }
 div#teamNav{
   float:left;
@@ -104,6 +58,7 @@ div#teamNav ul li a{
   
 li#design{
   background:url("./Design1.png");
+  z-index:200;
 }
 li#alg{
   background:url("./ALG1.png");
@@ -141,20 +96,21 @@ li#diy:hover,li#diy.tempTip{
 
 div#slide{
   float:left;
-  height:265px;
+  height:263px;
   margin-left:-12px;
-  width:460px;
+  width:458px;
+  border:1px solid #cccccc;
   overflow-y:scroll;
   background:#F9F9F9;
 }
 span.slideTip{
   display:inline-block;
-  padding-top:12px;
   font-size:13px;
   text-align:center;
-  margin:20px 17px -8px 27px;
+  margin:11px 17px 10px 27px;
+  line-height:3;
   width:80px;
-  height:32px;
+  height:44px;
   background:url("./design4.png");
 }
 span.slideTip.val0{
@@ -213,23 +169,19 @@ div#slide span.slideVal{
 }
 div#circle{
   clear:both;
-  padding:0px 0 0px 97px;
 }
 
-a#nextP , a#beforeP{
-    display:inline-block;
-    background:url("./nextP1.png");
+div#chgPage {
+  margin:0 0 0 83px;
+  width:540px;
+}
+div#chgPage a{
+  width:112px;
+  height:38px;
+}
+a#nextP , a#befP{
     width:112px;
     height:38px;
-    float:right;
-    margin: -12px 75px 0 0;
-}
-a#nextP:hover,a#beforeP{
-    background:url("./nextP2.png");
-}
-a#beforeP{
-  float:left;
-  margin-left:73px;
 }
 a:focus{
   outline:none;

@@ -1,0 +1,35 @@
+<html>
+  <head>
+	<meta charset="utf-8"/>
+	<link href="./register1.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="./jquery2.js"></script>
+	<script type="text/javascript" src="./jquery.form.js"></script>
+	<script type="text/javascript" src="./register1.js"></script>
+  </head>
+  <body id="_body">
+	<div id="content">
+	  <div id="top">
+		<img src="./1top.png">
+	  </div>
+	  <div id="registerForm">
+		<div><lable>你的名字：</lable><span id="name">姓名</span></div>
+		<div class="photo">
+		  <lable class="photo">你的头像：</lable><span><img src="./photo.png" width="129px"
+			height="155px"></span><span><a
+			  id="upLoadPhoto" href="javascript:void(0);"><form enctype="multipart/form-data"
+				method="post" action="./upPhoto.php"	id="myform2"><input type="file"
+				style="position: absolute; z-index: 953; cursor:pointer; left:-290px; font-size: 19px;
+				height: 34px; width: 77px; filter:alpha(opacity=0);  opacity: 0;" onchange="ajaxupload()"
+				name="file"></input></form>
+		  </a></span>
+		</div>
+		<div><lable>你的邮箱：</lable><span id="email">231231232@fds.com</span></div>
+		<div class="input"><lable>你的电话：</lable><input id="phone" type="text"></input><span
+			class="tip phoneTip"></span><span class="tip1">请输入常用电话</span></div>
+		<div class="input"><lable>你的主页：</lable><input id="yourhp" type="text"></input><span
+			class="tip hpTip"></span><span class="tip2">请输入主页地址</span></div>
+		<div><a id="nextP" href="javascript:void(0);"></a></div>
+	  </div>
+	</div>
+  </body>
+</html>

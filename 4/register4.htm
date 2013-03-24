@@ -1,0 +1,51 @@
+<html>
+  <head>
+	<meta charset="utf-8"/>
+	<script type="text/javascript" src="./jquery2.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="./jquery.form.js"></script>
+	<script type="text/javascript" src="./register4.js"></script>
+	<link href="./register4.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body id="_body">
+	  <div id="mask" style="width: 100%; height: 100%; z-index: 99999; background: none repeat scroll 0% 0% rgb(204, 204, 204); position: fixed; opacity: 0.76;display:none;"></div>
+	  <div id="content">
+	  	<div id="top"><img src="./4top.png"/></div>
+		<p>你加入的项目：</p>
+		<div id="myform">
+		  <div class="slide" id="form1">
+			<div><label>项目名称：</label><input type="text" class="name"></input></div>
+			<div class="time"><label>进行时间：</label><span>从</span><input type="text" class="from"></input><span>至</span><input
+			  class="to" type="text"></input></div>
+			<div class="property"><label>项目性质：</label>
+			  <a class="classN" name="课题" href="javascript:void(0);"></a>
+			  <a class="cpt" name="比赛" href="javascript:void(0);"></a>
+			  <a class="good" name="产品" href="javascript:void(0);"></a>
+			  <a class="other" name="其他" href="javascript:void(0);"></a>
+			</div>
+			<div><label>详细介绍：</label><textarea></textarea></div>
+			<div class="divAddImg"><label>相关图片：</label>
+				<a class="addImg" href="javascript:void(0);">
+				<form enctype="multipart/form-data"
+				method="post" action="./upPhoto.php"	class="myform2"><input type="file"
+				style="position: absolute; z-index:1; cursor:pointer; left:-286px; font-size: 19px;
+				height: 55px; width: 400px; filter:alpha(opacity=0);  opacity: 0;"
+				onchange="ajaxupload(1)"
+				name="file"></input></form>
+				</a>
+				<div class="showImg"></div>
+			</div>
+			<div><label>项目链接：</label><input class="url" type="text"></input></div>
+			 
+		  </div>
+		  <div><a id="addItem" href="javascript:void(0);"></a></div>
+		</div>
+		<div id="changePage">
+		  <a id="befP" href="javascript:void(0);"></a>
+		  <a id="nextP" href="javascript:void(0);"></a>
+		</div>
+	  </div>
+  </body>
+</html>

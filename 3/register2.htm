@@ -2,29 +2,15 @@
   <head>
 	<meta charset="utf-8"/>
 	<link href="./register2.css" rel="stylesheet" type="text/css"/>
-	
-
-	 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-	 <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
-	 <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 	<script type="text/javascript" src="./register2.js"></script>
   </head>
-  <body>
-
-	<div id="bg">
+  <body id="_body">
 	<div id="mask" style="width: 100%; height: 100%; z-index: 99999; background: none repeat scroll 0% 0% rgb(204, 204, 204); position: fixed; opacity: 0.76; display:none;"></div>
 	<div id="content">
-	  <h1>注册界面</h1>
-	  <div id="nav">
-		<ul>
-		  <li class="p1">1</li><span class="line"></span>
-		  <li class="p2">1</li><span class="line"></span>
-		  <li class="p3">1</li><span class="line"></span>
-		  <li class="p4">1</li><span class="line"></span>
-		  <li class="p5">1</li>
-		</ul>
-		<div id="guide"><img src="./guide.png"/></div>
-	  </div>
+		<div id="top"><img src="./3top.png"/></div>
 	  <div id="yourskill">
 		<h6 class="skillH">你的技能：</h6>
 		<p class="skillP"></p>
@@ -36,9 +22,8 @@
 			<li id="alg"><a  href="javascript:void(0);"></a></li>
 			<li id="it"><a  href="javascript:void(0);"></a></li>
 			<li id="web"><a  href="javascript:void(0);"></a></li>
-			<li id="android"><a  href="javascript:void(0);"></a></li>
-			<li id="diy"><a  href="javascript:void(0);"></a></li>
-
+			<li id="android" style="z-index:4"><a  href="javascript:void(0);"></a></li>
+			<li id="diy"style="z-index:3"><a  href="javascript:void(0);"></a></li>
 		  </ul>
 		</div>
 		<div id="slide">
@@ -53,6 +38,5 @@
 		<a id="nextP" href="javascript:void(0);"></a>
 	  </div>
 	</div>
-  </div>
   </body>
 </html>

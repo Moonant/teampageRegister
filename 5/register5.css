@@ -1,0 +1,147 @@
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, table, th, td, img, a {
+  margin: 0;
+  padding: 0;
+  font-size:100%;
+  font-weight:normal;
+}
+#_body{
+  margin-right:auto;
+  margin-left:auto;
+  width:800px;
+  font-family:Arial, sans-serif;
+}
+#_body{
+  width:100%;
+  text-align:center;
+}
+div#content {
+  width:800px;
+  height:900px;
+  text-align:left;
+  margin:0 auto;
+  background-repeat:no-repeat;
+  background-position:-107px -39px;
+
+}
+#top{
+   margin-bottom: 47px;
+  padding: 7px 0 0 55px;
+}
+#divide {
+ margin:0 60px; 
+}
+#divide span.line{
+  border: 1px solid #F1F0F0;
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-left: 9px;
+  width: 514px;
+}
+#divide a{
+    float: right;
+    height: 32px;
+    margin-top: -6px;
+    width: 54px;
+}
+#finish {
+  background:url("./finished.png");
+}
+#finish:hover {
+  background:url("./finished_ms.png");
+}
+#edit{
+  background:url("./edit_normal.png");
+}
+#edit:hover {
+  background:url("./edit_ms2");
+}
+
+
+
+#main{
+  width:20px;
+  height:290px;
+}
+#main #photo{
+  left: 305px;
+  position: relative;
+  top: 65px;
+  z-index:1;
+}
+#main .dot{
+  display:inline-block;
+  width:13px;
+  height:13px;
+  position:relative;
+  background:url("./pot.png");
+}
+#tagForm{
+  display: inline-block;
+  padding: 39px 0 0;
+}
+#tagForm p{
+  display:inline-block;
+  float: left;
+  margin: 0 0 0 84px;
+}
+
+#tForm{
+  float:left;
+  margin-left:12px;
+}
+#showTag{
+  border: 1px solid #CCCCCC;
+  width: 538px;
+  padding:5px;
+  margin:0 0 10px 0;
+  background:#EEECEC;
+}
+#tForm a{
+  padding:0 6px;
+  margin:3px;
+  background: none repeat scroll 0 0 #FFFFFF;
+  border: 1px solid #C1C1C1;
+  border-radius: 3px 3px 3px 3px;
+  color: black;
+  display: inline-block;
+  line-height: 26px;
+  text-decoration: none;
+}
+
+#showTag a.tag{
+  background: none repeat scroll 0 0 #FFFFFF;
+}
+#showTag span.delTag{
+  background: url("./Xx.png") no-repeat scroll 4px 1px transparent;
+  height: 12px;
+  margin: 0 0 0 6px;
+  width: 18px;
+}
+#showTag span.delTag:hover{
+   background: url("./tag_ms.png") no-repeat scroll -48px -5px transparent;
+   height: 17px;
+   margin: -1px 0 -3px 6px;
+   width: 18px;
+}
+a,span.delTag{
+  display:inline-block;
+  outline:none;
+}
+a:hover{
+  color:#285065;
+}
+input {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  margin: 5px 0;
+}
+#someTag{
+  width:551px;
+}
+#tForm a.someTag{
+  background: url("addTagButton.png") no-repeat scroll 3px 3px #FFFFFF;
+  border-radius: 7px 7px 7px 7px;
+  padding-left: 25px;
+}
+

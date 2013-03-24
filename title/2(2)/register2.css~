@@ -1,0 +1,67 @@
+div#bg{
+  background:url("./bg2.png");
+  width:1024px;
+  height:768px;
+  margin: 0 auto;
+}
+
+div#myform a{
+  display:inline-block;
+  width:59px;
+  height:59px;
+}
+div#myform a:hover{
+  background-position:0 0;
+}
+
+a#design{
+  background:url("./design1.png");
+}
+a#design:hover{
+  background:url("./design2.png");
+}
+a#design.select{
+  background:url("./design3.png");
+}
+a#alg{
+  background:url("./alg1.png");
+}
+a#alg:hover{
+  background:url("./alg2.png");
+}
+a#alg.select{
+  background:url("./alg3.png");
+}
+a#it{
+  background:url("./it1.png");
+}
+a#it:hover{
+  background:url("./it2.png");
+}
+a#it.select{
+  background:url("./it3.png");
+}
+a#web{
+  background:url("./web1.png");
+}
+a#web:hover{
+  background:url("./web2.png");
+}
+a#web.select{
+  background:url("./web3.png");
+}
+a#andriod{
+  background:url("./andriod1.png");
+}
+a#andriod:hover{
+  background:url("./andriod2.png");
+}
+a#andriod.select{
+  background:url("./andriod3.png");
+}
+a#{
+  background:url("./1.png");
+}
+a#{
+  background:url("./1.png");
+}
